@@ -1,5 +1,9 @@
-body {
+#body {
     background: #F0F0F0 !important;
+}
+
+#header {
+	/*height: 60px;*/
 }
 
 a {
@@ -99,12 +103,12 @@ a[href="/"].task-icon-link {
   background-size: contain !important;
 }
 
-a[href*="changes"].task-icon-link { 
+#side-panel a[href*="changes"].task-icon-link { 
   background: url(img/paper.png) no-repeat !important; 
   background-size: contain !important;
 }
 
-a[href*="/ws/"].task-icon-link { 
+#side-panel a[href*="/ws/"].task-icon-link { 
   background: url(img/folder.png) no-repeat !important; 
   background-size: contain !important;
 }
@@ -211,7 +215,11 @@ td.healthReport[data="100"] a.build-health-link {
 
 /* Large project icons */
 
-td:first-child a[href="javadoc"] {
+#main-panel-content table {
+  /*margin-left: 10px !important;*/
+}
+
+#main-panel td:first-child a[href="javadoc"] {
   background: url(img/box.png) no-repeat !important; 
   background-size: contain !important;
   padding: 24px !important;
@@ -222,10 +230,10 @@ a[href="javadoc"] img {
    display: none !important;
 }
 
-td:first-child a[href="ws/"] {
+#main-panel td:first-child a[href="ws/"] {
   background: url(img/folder.png) no-repeat !important; 
   background-size: contain !important;
-  padding: 24px !important;
+  padding: 16px !important;
   display: block !important;
 }
 
@@ -233,10 +241,20 @@ a[href="ws/"] img {
    display: none !important;
 }
 
-td:first-child a[href="changes"] {
+#main-panel td:first-child a[href="changes"] {
   background: url(img/paper.png) no-repeat !important; 
   background-size: contain !important;
-  padding: 24px !important;
+  padding: 16px !important;
+  display: block !important;
+}
+
+/* Remove permalinks */
+.permalinks-header {
+  display: none;
+}
+
+.permalinks-list {
+  display: none;
 }
 
 #main-panel > table a[href="lastSuccessfulBuild/artifact/"] {
@@ -299,31 +317,67 @@ a[href="#"] img {
 } 
 
 /* Just remove the page-icons */
-#main-panel h1 img {
-    display: none !important;
+#jenkins-name-icon {
+  /*display: none;*/
+}
+ 
+#jenkins-head-icon {
+	/*opacity: 0;*/
+}
+ 
+.logo {
+	margin-bottom: 15px;
+}
+ 
+#jenkins-home-link {
+	display: block;
+  /*background: url("hawk.png") 0 0 no-repeat;*/
+	height: 64px;
+  width: 354px;
+}
+ 
+/* Resize breadcrumb bar into a sexy header */
+/*#breadcrumbBar {
+  background-color: #008eaf !important;
+  display: block;
+  height: 60px!important;
+}*/
+ 
+/* Be gone, evil breadcrumbs */
+/*#breadcrumbs {
+    display: none;
+}*/
+
+.model-link.inside.breadcrumbBarAnchor {
+  padding-right: 10px !important;
 }
 
 /*Start other CSS */
 .model-link.inside {
-   padding-right: 0px !important;
+    padding-right: 0px !important;
 }
 
 .model-link {
-     color: #666 !important;
+    color: #666 !important;
 }
 
 .model-link:hover {
-     color: #555 !important;
-     background: #f0f0f0 !important;
+    color: #555 !important;
+    /*background: #f0f0f0 !important;*/
+}
+
+.login span a {
+    color: #fff !important;
+    background: none;
+}
+
+.login span a:hover {
+    color: #000;
 }
 
 a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
-     color: #555 !important;
-     background: #f0f0f0 !important;
-}
-
-#login-field a {
-    background: transparent !important;
+    color: #555 !important;
+    background: #f0f0f0 !important;
 }
 
 .icon16x16 {
@@ -331,7 +385,7 @@ a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
 }
 
 #menuSelector {
-  display: none !important;
+    display: none !important;
 }
 
 .healthReportDetails {
@@ -346,7 +400,7 @@ a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
     border: 0px !important;
 }
 
-#search-box:focus {
+#searchform:focus {
     background: #f0f0f0 !important;
 }
 
@@ -358,44 +412,28 @@ a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
     background: #f0f0f0 !important;
 }
 
-#top-panel {
-    height: 37px !important;
-    background: #39c;
-    background-size:100% 100%;
-}
-
-#top-panel td #login-field span a {
+td #searchform a {
     background: none;
 }
 
-#top-panel td #searchform a {
-    background: none; 
-}
-
-#top-panel td #searchform a img {
-  display: none;
-}
-
-#top-panel td > a {
-    display: block;
-    background: url("hawk.png") 0 0 no-repeat;
-    display: block;
-    width: 354px;
-    height: 64px;
-    margin: 0px 0 -5px 0px;
-}
-
-#top-panel td > a img {
-  display: none;
+td #searchform a img {
+    display: none;
 }
 
 #left-top-nav {
-   display: none !important;
+    display: none !important;
+}
+
+#right-top-nav {
+    position: relative;
+    /*top: 20px;*/
+    left: 6px;
 }
 
 #right-top-nav  a {
-    color: #fff !important;
-    margin-top: 1px;
+    background: transparent !important;
+    color: #666 !important;
+    text-decoration-color: #666;
     text-decoration: none;
     display: block;
     padding-left: 5px;
@@ -403,14 +441,17 @@ a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
 }
 
 #right-top-nav  a:hover {
-    background: white;
-    color: black !important;
+    color: #555 !important;
 }
 
 #main-table {
     background: white !important;
     background-image: none !important;
     height: 100% !important;
+}
+
+#search-box {
+  height: 15px;
 }
 
 #search-box, #filter-box {
@@ -430,11 +471,6 @@ a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
     padding-bottom: 5px;
 }
 
-/* dat selector */
-#top-panel > table > tbody > tr > td:first-of-type > a  > img {
-    margin-top: 5px;
-}
-
 #searchform a {
     display: block;
     margin-top: 4px;
@@ -448,25 +484,24 @@ a[href*="lastSuccessfulBuild/artifact/target/"]:hover {
     color: #505050 !important;
 }
 
+#footer-container {
+    background: #F0F0F0;
+}
+
+#footer > span {
+    color: #505050 !important;
+}
+
+#l10n-footer {
+    display: none !important;
+}
+
 #footer > a {
     color: #326ca6 !important;
 }
 
 a {
     color: #326ca6 !important;
-    text-decoration: none !important;
-}
-
-#login-field a {
-  color: white !important;
-}
-
-#login-field > span > a {
-    color: white !important;
-    font-weight: normal !important;
-}
-
-#login-field > span > a:hover {
     text-decoration: none !important;
 }
 
@@ -549,14 +584,22 @@ td.inactive:hover {
     background: #f0f0f0 !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
-    height: 100% !important;
+    height: 100%;
+    max-width: 20%;
+    width: 20%;
 }
 
 #main-panel {
+    box-sizing: border-box;
     border-left: 1px solid #ddd !important;
     padding: 10px !important;
-    margin-left: 10px !important;
     height: 100% !important;
+    max-width: 80%;
+    width: 80%;
+}
+
+#side-panel-content, #main-panel-content {
+  margin: 0;
 }
 
 table {
@@ -579,7 +622,7 @@ table {
 }
 
 .task:hover {
-   background: white !important;
+    background: white !important;
 }
 
 .task-icon-link {
@@ -618,7 +661,7 @@ table {
 }
 
 .subtasks:empty {
-  display: none;
+    display: none;
 }
 
 td.pane, tr.build-row > td {
@@ -671,8 +714,10 @@ button {
 
 #description > div:nth-of-type(1) {
     float: left;
-    margin-left: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
     margin-top: 10px;
+    text-align: justify;
     overflow: auto;
 }
 
@@ -731,10 +776,6 @@ td.pane-header > div > a.collapse {
     position: relative;
 }
 
-#l10n-footer {
-       display: none !important; 
-}
-
 /* color blocks */
 @-webkit-keyframes inprogress {
     0% {
@@ -761,15 +802,15 @@ td.pane-header > div > a.collapse {
 }
 
 Keyframes inprogress {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.1;
-    }
-    100% {
-        opacity: 1;
-    }
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.1;
+}
+100% {
+    opacity: 1;
+}
 }
 
 img[src$="blue.png"],     img[src$="blue.gif"],     img[src$="blue_anime.gif"],
@@ -788,7 +829,8 @@ img[src$="aborted.png"],  img[src$="aborted.gif"],  img[src$="aborted_anime.gif"
 }
 
 img[src*="blue.png"], img[src*="blue_anime.gif"] {
-    background: #326ca6 !important;
+    /*background: #326ca6 !important;*/
+    background: #55D055 !important;
 }
 
 img[src*="yellow.png"], img[src*="yellow_anime.gif"] {
