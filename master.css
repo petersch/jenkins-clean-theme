@@ -168,6 +168,26 @@ a[href*="/GitHubPollLog"].task-icon-link {
     background-size: contain!important;
 }
 
+a[href*="/parameters"].task-icon-link {
+    background: url(img/command.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*="/RSpec_Report"].task-icon-link {
+    background: url(img/finger.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*="/job"].task-icon-link.bg-arrow-left-icon {
+  background: url(img/arrow-left.png) no-repeat!important;
+  background-size: contain!important;
+}
+
+a[href*="/job"].task-icon-link.bg-arrow-right-icon {
+  background: url(img/arrow-right.png) no-repeat!important;
+  background-size: contain!important;
+}
+
 div.task a[href="#"]:first-child { 
   background: url(img/x.png) no-repeat !important; 
   background-size: contain !important;
@@ -219,10 +239,21 @@ td.healthReport[data="100"] a.build-health-link {
   /*margin-left: 10px !important;*/
 }
 
-#main-panel td:first-child a[href="javadoc"] {
+/*#main-panel td:first-child a[href="javadoc"] {
   background: url(img/box.png) no-repeat !important; 
   background-size: contain !important;
   padding: 24px !important;
+  display: block !important;
+}
+
+a[href="RSpec_Report"] img {
+   display: none !important;
+}
+
+#main-panel td:first-child a[href="RSpec_Report"] {
+  background: url(img/finger.png) no-repeat !important; 
+  background-size: contain !important;
+  padding: 9px !important;
   display: block !important;
 }
 
@@ -233,7 +264,7 @@ a[href="javadoc"] img {
 #main-panel td:first-child a[href="ws/"] {
   background: url(img/folder.png) no-repeat !important; 
   background-size: contain !important;
-  padding: 16px !important;
+  padding: 13px !important;
   display: block !important;
 }
 
@@ -244,9 +275,11 @@ a[href="ws/"] img {
 #main-panel td:first-child a[href="changes"] {
   background: url(img/paper.png) no-repeat !important; 
   background-size: contain !important;
-  padding: 16px !important;
+  padding: 13px !important;
   display: block !important;
-}
+}*/
+
+/*lastCompletedBuild/testReport/*/
 
 /* Remove permalinks */
 .permalinks-header {
@@ -303,10 +336,22 @@ a[href="ws/"] img {
 }
 
 
-/* Misc fixes */
-a[href="changes"] img {
-   display: none !important;
+/* Hide some unneeded links */
+#description-link {
+  display: none;
 }
+
+#disable-project {
+  /*Breaks UI*/
+  /*display: none;*/
+}
+
+
+/* Misc fixes */
+
+/*a[href="changes"] img {
+   display: none !important;
+}*/
 
 td[style="vertical-align:middle"] a[href="ws/"] {
   background: transparent !important;
