@@ -100,6 +100,9 @@ a.task-icon-link img {
 }
 
 
+
+
+
 /* The small nav icons */
 a[href*="/job/"].task-icon-link { 
   background: url(img/return.png) no-repeat !important; 
@@ -1002,15 +1005,18 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 
 #buildQueue td.pane {
   border-width: 0px 0px 1px 0px !important;
-  border-color: #ccc !important;
-  background-color: #ddd !important;
+  border-color: #ddd !important;
+  background-color: #f0f0f0 !important;
   vertical-align: middle !important;
 }
 
 #buildQueue td.pane-header {
-  border: none !important;
-  background-color: #bbb !important;
-  padding: 0px 0px 0px 3px !important;
+  /*border: none !important;*/
+  background-color: #ddd !important;
+  padding: 1px 1px 1px 3px !important;
+  border-width: 1px 0px 1px 0px !important;
+  border-color: #ccc !important;
+  border-style: solid !important;
 }
 
 /* fix pre progress bar */
@@ -1046,13 +1052,15 @@ table.progress-bar tr.unknown td {
 }
 
 #executors th {
-  border: none !important;
-  background-color: #bbb !important;
+  /*border: none !important;*/
+  border-width: 1px 0px 1px 0px !important;
+  border-color: #ccc !important;
+  background-color: #ddd !important;
 }
 
 #executors td.pane {
   border-width: 0px 0px 1px 0px !important;
-  border-color: #ccc !important;
-  background-color: #ddd !important;
+  border-color: #ddd !important;
+  background-color: #f0f0f0 !important;
   vertical-align: middle !important;
 }
