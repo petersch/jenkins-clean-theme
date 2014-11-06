@@ -7,6 +7,7 @@
 }
 
 a {
+  color: #326ca6 !important;
     text-decoration: none !important;
 }
 
@@ -224,12 +225,16 @@ td.healthReport[data="100"] a.build-health-link {
 #projectstatus td a[href*="build?"] { 
   background: url(img/build.png) no-repeat !important; 
   background-size: contain !important;
-  padding-left: 24px; /* Equal to width of new image */
+  /*padding-left: 24px;*/ /* Equal to width of new image */
   margin-left: 12px;
 }
 
 #projectstatus td a[href*="build?"] img {
-  display: none !important;
+  /*display: none !important;*/
+  /* nemozme zrusit uplne, je na tom javascript ktory odpostuje build request */
+  content: url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+  width: 24px;
+  height: 24px;
 }
 
 
@@ -336,6 +341,9 @@ a[href="ws/"] img {
 }
 
 
+
+
+
 /* Hide some unneeded links */
 #description-link {
   display: none;
@@ -345,6 +353,10 @@ a[href="ws/"] img {
   /*Breaks UI*/
   /*display: none;*/
 }
+
+
+
+
 
 
 /* Misc fixes */
@@ -380,18 +392,6 @@ a[href="#"] img {
 	height: 64px;
   width: 354px;
 }
- 
-/* Resize breadcrumb bar into a sexy header */
-/*#breadcrumbBar {
-  background-color: #008eaf !important;
-  display: block;
-  height: 60px!important;
-}*/
- 
-/* Be gone, evil breadcrumbs */
-/*#breadcrumbs {
-    display: none;
-}*/
 
 .model-link.inside.breadcrumbBarAnchor {
   padding-right: 10px !important;
@@ -402,11 +402,11 @@ a[href="#"] img {
     padding-right: 0px !important;
 }
 
-.model-link {
+a.model-link, a.inside.breadcrumbBarAnchor {
     color: #666 !important;
 }
 
-.model-link:hover {
+a.model-link:hover, a.inside.breadcrumbBarAnchor:hover {
     color: #555 !important;
     /*background: #f0f0f0 !important;*/
 }
@@ -797,7 +797,7 @@ li.children {
     height: 0 !important;
     border-top: 4px solid transparent !important;
     border-bottom: 4px solid transparent !important;
-    border-left: 5px solid #F0F0F0 !important;
+    border-left: 5px solid #d3d7cf !important;
     margin-top: 10px;
     margin-right: 5px;
     margin-left: 5px;
@@ -806,7 +806,7 @@ li.children {
 li.children:hover {
     border-top: 4px solid transparent !important;
     border-bottom: 4px solid transparent !important;
-    border-left: 5px solid #036 !important;
+    border-left: 5px solid #666 !important;
 }
 
 li.item :first-of-type {
@@ -887,11 +887,11 @@ img[src*="red.png"], img[src*="red_anime.gif"] {
 }
 
 img[src*="_anime.gif"] {
-    -webkit-animation: inprogress 2s;
+    -webkit-animation: inprogress 1s;
     -webkit-animation-iteration-count: infinite;
-    -moz-animation: inprogress 2s;
+    -moz-animation: inprogress 1s;
     -moz-animation-iteration-count: infinite;
-    -o-animation: inprogress 2s;
+    -o-animation: inprogress 1s;
     -o-animation-iteration-count: infinite;
 }
 
@@ -950,4 +950,69 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
     width: 0;
     height: 48px;
     padding: 0 48px 0 0;
+}
+
+
+
+
+
+#buildQueue {
+  margin: 20px 0px 30px 0px !important;
+}
+
+#buildQueue td.pane {
+  border-width: 0px 0px 1px 0px !important;
+  border-color: #ccc !important;
+  background-color: #ddd !important;
+  vertical-align: middle !important;
+}
+
+#buildQueue td.pane-header {
+  border: none !important;
+  background-color: #bbb !important;
+  padding: 0px 0px 0px 3px !important;
+}
+
+/* fix pre progress bar */
+/* td.unknown, td.progress-bar-done, td.progress-bar-left etc */
+/* table.progress-bar sa meni na table.progress-bar.red */
+
+/* hide link to executor status, it can be found in manage */ 
+#executors > tbody:first-of-type {
+  display: none !important;
+}
+
+#executors td:nth-of-type(2) {
+  width: 100% !important;
+}
+
+table.progress-bar {
+  width: 100% !important;
+  margin-top: 2px !important;
+}
+
+table.progress-bar td {
+  height: 6px !important;
+  padding: 0px !important;
+}
+
+table.progress-bar tr.unknown td {
+  width: 100% !important;
+}
+
+#executors {
+  border-collapse: collapse;
+  border-width: 0px;
+}
+
+#executors th {
+  border: none !important;
+  background-color: #bbb !important;
+}
+
+#executors td.pane {
+  border-width: 0px 0px 1px 0px !important;
+  border-color: #ccc !important;
+  background-color: #ddd !important;
+  vertical-align: middle !important;
 }
