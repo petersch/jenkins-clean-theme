@@ -1000,7 +1000,7 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 /* build queue and executors */
 
 #buildQueue {
-  margin: 20px 0px 30px 0px !important;
+  margin: 0px !important;
 }
 
 #buildQueue td.pane {
@@ -1008,6 +1008,10 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
   border-color: #ddd !important;
   background-color: #f0f0f0 !important;
   vertical-align: middle !important;
+}
+
+#buildQueue tr:last-of-type td.pane {
+  border: none !important;
 }
 
 #buildQueue td.pane-header {
@@ -1049,6 +1053,7 @@ table.progress-bar tr.unknown td {
 #executors {
   border-collapse: collapse;
   border-width: 0px;
+  margin: 0px !important;
 }
 
 #executors th {
