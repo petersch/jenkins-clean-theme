@@ -1,27 +1,84 @@
-#body {
-    background: #F0F0F0 !important;
-}
+/* general settings */
 
-#header {
-	/*height: 60px;*/
+#body {
+  background: #F0F0F0 !important;
 }
 
 a {
-  color: #326ca6 !important;
-    text-decoration: none !important;
+  /*color: #326ca6 !important;*/
+  color: #547BA1 !important;
+  text-decoration: none !important;
 }
 
 a:hover {
-   color: #666 !important;
+  color: #16314B !important;
 }
 
 a b {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 a b:hover {
-   color: #f0f0f0 !important;
+  color: #f0f0f0 !important;
 }
+
+
+
+
+
+/* header */
+
+#header {
+  /*height: 60px;*/
+}
+ 
+#jenkins-home-link {
+  display: block;
+  /*background: url("hawk.png") 0 0 no-repeat;*/
+  height: 64px;
+  width: 354px;
+}
+
+#jenkins-name-icon {
+  /*display: none;*/
+}
+ 
+#jenkins-head-icon {
+  /*opacity: 0;*/
+}
+ 
+.logo {
+  margin-bottom: 15px;
+}
+
+
+
+
+
+/* breadcrumbs */
+
+.model-link.inside.breadcrumbBarAnchor {
+  padding-right: 10px !important;
+}
+
+.model-link.inside {
+    padding-right: 0px !important;
+}
+
+a.model-link.inside.breadcrumbBarAnchor {
+    color: #666 !important;
+}
+
+a.model-link:hover.inside.breadcrumbBarAnchor:hover {
+    color: #555 !important;
+    /*background: #f0f0f0 !important;*/
+}
+
+
+
+
+
+
 
 #description div {
   padding-bottom: 20px !important;
@@ -231,7 +288,7 @@ td.healthReport[data="100"] a.build-health-link {
 
 #projectstatus td a[href*="build?"] img {
   /*display: none !important;*/
-  /* nemozme zrusit uplne, je na tom javascript ktory odpostuje build request */
+  /* cannot hide, it fires javascript event when clicked */
   content: url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
   width: 24px;
   height: 24px;
@@ -373,43 +430,7 @@ a[href="#"] img {
    display: none !important;
 } 
 
-/* Just remove the page-icons */
-#jenkins-name-icon {
-  /*display: none;*/
-}
- 
-#jenkins-head-icon {
-	/*opacity: 0;*/
-}
- 
-.logo {
-	margin-bottom: 15px;
-}
- 
-#jenkins-home-link {
-	display: block;
-  /*background: url("hawk.png") 0 0 no-repeat;*/
-	height: 64px;
-  width: 354px;
-}
 
-.model-link.inside.breadcrumbBarAnchor {
-  padding-right: 10px !important;
-}
-
-/*Start other CSS */
-.model-link.inside {
-    padding-right: 0px !important;
-}
-
-a.model-link, a.inside.breadcrumbBarAnchor {
-    color: #666 !important;
-}
-
-a.model-link:hover, a.inside.breadcrumbBarAnchor:hover {
-    color: #555 !important;
-    /*background: #f0f0f0 !important;*/
-}
 
 .login span a {
     color: #fff !important;
@@ -523,6 +544,12 @@ td #searchform a img {
     float: right;
 }
 
+
+
+
+
+/* footer */
+
 #footer {
     border-top-color: #ddd !important;
     background: #F0F0F0 !important;
@@ -545,14 +572,17 @@ td #searchform a img {
     color: #326ca6 !important;
 }
 
-a {
-    color: #326ca6 !important;
-    text-decoration: none !important;
-}
+
+
+
 
 .smallfont > a:hover {
     text-decoration: none !important;
 }
+
+
+
+
 
 #projectstatus {
     border: none !important;
@@ -589,15 +619,11 @@ table.pane > tbody > tr > td:last-child {
     border-right: none !important;
 }
 
-td.active {
-    background: white !important;
-    color: #326ca6 !important;
-    padding-bottom: 2px !important;
-}
 
-td.inactive {
-    border: none !important;
-}
+
+
+
+/* viewlist */
 
 #viewList {
     margin-bottom: 30px !important;
@@ -605,13 +631,29 @@ td.inactive {
     border-top: 1px solid #ddd !important;
 }
 
-.dashboard {
-    margin-top: 20px !important;
+#viewList td.active {
+    background: white !important;
+    /*color: #326ca6 !important;*/
+    padding-bottom: 2px !important;
 }
 
-td.inactive a {
-    color: #505050 !important;
-    text-decoration: none !important;
+#viewList td.inactive {
+  padding: 0px !important;
+    border: none !important;
+}
+
+#viewList td.inactive:hover {
+    background-color: inherit !important;
+}
+
+
+
+
+
+
+
+.dashboard {
+    margin-top: 20px !important;
 }
 
 td {
@@ -619,10 +661,6 @@ td {
     padding-right: 5px !important;
     height: 25px;
     font-size: 13px !important;
-}
-
-td.inactive:hover {
-    background: #f0f0f0 !important;
 }
 
 #side-panel {
@@ -955,6 +993,8 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 
 
 
+
+/* build queue and executors */
 
 #buildQueue {
   margin: 20px 0px 30px 0px !important;
