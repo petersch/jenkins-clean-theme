@@ -553,6 +553,10 @@ td #searchform a img {
 
 /* footer */
 
+#side-panel, #main-panel {
+  margin: 0px 0px 33px 0px !important;
+}
+
 #footer {
     border-top-color: #ddd !important;
     background: #F0F0F0 !important;

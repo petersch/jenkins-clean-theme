@@ -2,11 +2,25 @@
 var $jq = jQuery.noConflict(true);
 
 function stickyFoot() {
+	// var bodyHeight = $jq("body.yui-skin-sam").height();
+	// var vwptHeight = $jq(window).height();
+	// var footHeight = 45;
+	// var headerHeight = $jq("#header").height();
+	// $jq("#main-table").css("min-height",vwptHeight-footHeight-headerHeight);
+
 	var bodyHeight = $jq("body.yui-skin-sam").height();
 	var vwptHeight = $jq(window).height();
-	var footHeight = 45;
+	var footHeight = 33; // include padding! //$jq("#footer-container").height();
 	var headerHeight = $jq("#header").height();
-	$jq("#main-table").css("min-height",vwptHeight-footHeight-headerHeight);
+	var bcbarHeight = $jq('#breadcrumbBar').height();
+	var minViewportHeight = vwptHeight-footHeight-headerHeight-bcbarHeight;
+
+	var sideContentHeight = $jq('#side-panel-content').height() + 12; // + padding
+	var mainContentHeight = $jq('#main-panel-content').height() + 20; // + padding
+	var maxContentHeight = Math.max(sideContentHeight, mainContentHeight);
+	var height = Math.max(minViewportHeight, maxContentHeight);
+	$jq("#side-panel").css("min-height", height);
+	$jq("#main-panel").css("min-height", height);
 }
 
 function sidePanelFix() {
