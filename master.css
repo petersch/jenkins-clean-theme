@@ -1021,10 +1021,52 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 #buildQueue td.pane-header {
   /*border: none !important;*/
   background-color: #ddd !important;
-  padding: 1px 1px 1px 3px !important;
+  padding: 1px 3px 1px 3px !important;
   border-width: 1px 0px 1px 0px !important;
   border-color: #ccc !important;
   border-style: solid !important;
+}
+
+#buildHistory {
+  margin: 0px !important;
+}
+
+#buildHistory td.pane-header {
+  /*border: none !important;*/
+  background-color: #ddd !important;
+  padding: 1px 3px 1px 3px !important;
+  border-width: 1px 0px 1px 0px !important;
+  border-color: #ccc !important;
+  border-style: solid !important;
+}
+
+/* no idea what this was */
+#buildHistory div.healthReport {
+ display: none !important;
+}
+
+#buildHistory div div {
+  padding: 0px;
+}
+
+#buildHistory th {
+  /*border: none !important;*/
+  border-width: 1px 0px 1px 0px !important;
+  border-color: #ccc !important;
+  background-color: #ddd !important;
+}
+
+#buildHistory td {
+  border-width: 0px 0px 1px 0px !important;
+  border-color: #ddd !important;
+  background-color: #f0f0f0 !important;
+  vertical-align: middle !important;
+  padding: 3px !important;
+}
+
+#buildHistory tr.build-row td+td {
+  padding-left: 15px !important;
+  width: 100%;
 }
 
 /* fix pre progress bar */
